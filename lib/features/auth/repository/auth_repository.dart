@@ -39,7 +39,7 @@ class AuthRepository {
     try {
       final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
 
-      final googleAuth = (await googleUser?.authentication);
+      final googleAuth = await googleUser?.authentication;
 
       final credential = GoogleAuthProvider.credential(
         accessToken: googleAuth?.accessToken,
@@ -61,7 +61,7 @@ class AuthRepository {
           awards: [],
         );
 
-        _users.doc(userCredential.user!.uid).set(userModel.toMap());
+        await _users.doc(userCredential.user!.uid).set(userModel.toMap());
       } else {
         userModel = await getUserData(userCredential.user!.uid).first;
       }
