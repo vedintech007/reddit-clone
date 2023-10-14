@@ -7,7 +7,7 @@ class UserModel {
   final String uid;
   final bool isAuthenticated;
   final int karma;
-  final List<String> awards;
+  final List awards;
 
   UserModel({
     required this.name,
@@ -59,9 +59,7 @@ class UserModel {
       uid: map['uid'] as String,
       isAuthenticated: map['isAuthenticated'] as bool,
       karma: map['karma'] as int,
-      awards: List<String>.from(
-        (map['awards'] as List<String>),
-      ),
+      awards: List.from((map['awards'] as List)),
     );
   }
 

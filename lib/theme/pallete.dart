@@ -8,6 +8,7 @@ class Pallete {
   static const whiteColor = Colors.white;
   static var redColor = Colors.red.shade500;
   static var blueColor = Colors.blue.shade300;
+  static var blueColor2 = Colors.blue;
 
   // Themes
   static var darkModeAppTheme = ThemeData.dark().copyWith(
