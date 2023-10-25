@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:routemaster/routemaster.dart';
 
 class ErrorText extends StatelessWidget {
   const ErrorText({
@@ -10,8 +11,23 @@ class ErrorText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(error),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            error,
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 30),
+          TextButton(
+            onPressed: () => Routemaster.of(context).pop(),
+            child: const Text("Go Back"),
+          ),
+        ],
+      ),
     );
   }
 }
