@@ -54,7 +54,6 @@ class CommunityRepository {
 
   Stream<Community> getCommunityByName(String name) {
     return _communities.doc(name).snapshots().map((com) {
-      print(com.data());
       return Community.fromMap(com.data() as Map<String, dynamic>);
     });
   }

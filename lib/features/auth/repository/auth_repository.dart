@@ -66,7 +66,6 @@ class AuthRepository {
         userModel = await getUserData(userCredential.user!.uid).first;
       }
 
-      print(userCredential.user?.email);
       return right(userModel);
     } on FirebaseException catch (e) {
       throw e.message!;
